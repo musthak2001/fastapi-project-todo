@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from typing import Optional
 
 # Base model shared by create and update requests
 class TodoBase(BaseModel):
