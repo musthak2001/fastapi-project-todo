@@ -15,4 +15,22 @@ class Todo(TodoBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+# ------------------- User Schemas -------------------
+
+# 👉 Base schema for user (shared)
+class UserBase(BaseModel):
+    name: str
+    email: str
+
+# 👉 Used for registering new user
+class UserCreate(UserBase):
+    password: str
+
+# 👉 Used when returning user details
+class User(UserBase):
+    id: int
+
+    class Config:
+        from_attributes = True
